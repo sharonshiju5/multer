@@ -10,16 +10,19 @@
     <div class="container">
         <div class="a"><a href="../index.html">get users</a></div>
         <div class="h1"><h1>user information form</h1></div>
-        <label for="">email</label>
-        <input type="text" name="" id="">
-        <label for="">user-name</label>
-        <input type="text" name="" id="">
-        <label for="">photo</label>
-        <input type="file" name="" id="file">
-        <label for="">pone</label>
-        <input type="text" name="" id="">
-        <button>submit</button>
+        <form action="" id="form" enctype="multipart/form-data">
+            <label for="email">email</label>
+            <input type="text" name="email" id="email">
+            <label for="username">user-name</label>
+            <input type="text" name="username" id="usr">
+            <label for="image">photo</label>
+            <input type="file" name="file" id="image" multiple>
+            <label for="phone">pone</label>
+            <input type="text" name="phone" id="phone">
+            <button>submit</button>
+        </form>
         <!-- <div class="h1">h</div> -->
     </div>
+    <script src="../js/index.js"></script>
 </body>
 </html>
