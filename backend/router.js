@@ -13,6 +13,8 @@ const storage=multer.diskStorage({
 const upload = multer({ storage })
 const router=Router();
 router.route('/adduser').post(upload.array('file',15),rh.addUser);
+router.route('/getuser').get(rh.getUsers);
+router.route('/image/:filename').get(rh.loadImage);
 
 
 module.exports=router;

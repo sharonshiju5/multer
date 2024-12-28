@@ -1,4 +1,5 @@
 const userSchema=require("./multer.model.js");
+const path=require('path');
 async function addUser(req,res) {
     try {
         console.log(req.body);
@@ -14,7 +15,26 @@ async function addUser(req,res) {
         
     }
 }
+async function getUsers(req,res) {
+    try {
+        const user=await userSchema.find();
+        res.status(200).send(user)
+    } catch (error) {
+        console.log(error);
+        
+    }
+    
+}
+async function loadImage(req,res) {
+    const {filename}=req.params
+    return res.sendFile(path.resolve(`./uploads/${filename}`))
+    
+}
+
+
 
 module.exports = {
-    addUser 
+    addUser,
+    getUsers,
+    loadImage
 }
